@@ -34,7 +34,7 @@ public class TelaJogo extends JPanel implements ActionListener {
 	TelaJogo() {
 		random = new Random();
 		setPreferredSize(new Dimension(largura_tela, altura_tela));
-	    setBackground(Color.gray);
+	    setBackground(Color.black);
 	    setFocusable(true);
 	    addKeyListener(new LeitorDeTeclasAdapter());
 	    iniciarJogo();
@@ -68,7 +68,7 @@ public class TelaJogo extends JPanel implements ActionListener {
 					g.fillRect(eixoX[i], eixoY[i], tamanho_bloco, tamanho_bloco);
 				}
 			}
-			g.setColor(Color.red);
+			g.setColor(Color.white);
 			g.setFont(new Font(fonte, Font.BOLD, 40));
 			FontMetrics metrics = getFontMetrics(g.getFont());
 			g.drawString("Pontos: " + blocosComidos, (largura_tela - metrics.stringWidth("Pontuação: " + blocosComidos)) / 2, g.getFont().getSize());
@@ -85,11 +85,11 @@ public class TelaJogo extends JPanel implements ActionListener {
 	
 
 	public void fimDeJogo(Graphics g) {
-		g.setColor(Color.red);
+		g.setColor(Color.white);
 		g.setFont(new Font(fonte, Font.BOLD, 40));
 		FontMetrics fontePontuacao = getFontMetrics(g.getFont());
 		g.drawString("Pontos: " + blocosComidos, (largura_tela - fontePontuacao.stringWidth("Pontuação: " + blocosComidos)) / 2, g.getFont().getSize());
-		g.setColor(Color.red);
+		g.setColor(Color.white);
 		g.setFont(new Font(fonte, Font.BOLD, 40));
 		FontMetrics fonteFinal = getFontMetrics(g.getFont());
 		g.drawString("Fim do Jogo", (largura_tela - fonteFinal.stringWidth("Fim de Jogo")) / 2, altura_tela / 2);
